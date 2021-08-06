@@ -16,3 +16,16 @@ SQL es un acrónimo que significa _Structured Query Language_. Tal como lo dice,
 En este repositorio, se dan dos ejemplos del manejo de bases de datos con el lenguaje de programación ***Python***.
 
 * SQLite: ejemplo del manejo de bases de datos con SQLite en Python.
+* MySQL: ejemplo del manejo de bases de datos con MySQL.
+
+----
+
+## Instalación
+
+SQLite ya viene incluido en los paquetes de Python, por lo que no es necesario instalar bibliotecas o paquetes externos.
+
+Para MySQL, se necesita lo siguiente:
+* XAMPP o WampServer
+* El módulo de manejo de MySQL en Python
+
+        pip install mysql-connector-python
