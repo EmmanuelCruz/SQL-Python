@@ -66,7 +66,7 @@ Para crear una tabla nuevamente se utiliza la función _execute_, son la instruc
 Si se corre el programa, podemos notar que en _phpMyAdmin_ ya se encuentra creada la tabla en la base de datos.
 
 <div align="center">
-<img src="Tabla.PNg" >
+<img src="Tabla.PNG" >
 <p>Creación de tabla</p>
 </div>
 
