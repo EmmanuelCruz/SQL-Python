@@ -42,7 +42,10 @@ Para crear una base de datos se utiliza la función _execute_, implementado para
 
 Notése que una vez ejecutado el programa, se mostrará la nueva base creada en _phpMyAdmin_.
 
-![base](Base.PNG)
+<div align="center">
+<img src="Base.PNG"" >
+<p>Perfectly balanced</p>
+</div>
 
 ### Crear una tabla
 
@@ -62,4 +65,64 @@ Para crear una tabla nuevamente se utiliza la función _execute_, son la instruc
 
 Si se corre el programa, podemos notar que en _phpMyAdmin_ ya se encuentra creada la tabla en la base de datos.
 
-![tabla](Tabla.PNG)
+<div align="center">
+<img src="Tabla.PNg" >
+</div>
+
+### Insertar un nuevo dato
+
+Se utiliza la función _execute_ con la instrucción en SQL sobre lo que se quiere hacer. Para insertar un nuevo elemento se usa lo siguiente:
+
+                cursor.execute("INSERT INTO tableName VALUES (...)")
+                database.commit()
+
+Donde _tableName_ es el nombre de la tabla y los tres puntos corresponde a los parámetros del nuevo objeto a insertar.
+
+Por otro lado, también es posible insertar elementos de forma masiva, es decir, más de uno en una sola instrucción. Esto se hace con la siguiente sintaxis
+
+                cursor.execute("INSERT INTO tableName VALUES (%s,%s,%s,...)", datos)
+                database.commit()
+
+donde _%s_ significa que ahí estará uno de los datos de los elementos a insertar. Nótese que esta nueva forma recibe un parámetro, que corresponde a una lista de tuplas con la información de los datos a almacenar.
+
+**IMPORTANTE**: Siempre es necesario invocar la función _commit_ para que los cambios se vean reflejados en la base, de lo contrario, estos no estarán visibles.
+
+<div align="center">
+<img src="Insertar.PNG" >
+<p>Perfectly balanced</p>
+</div>
+
+### Acceder a los elementos de una tabla
+
+Con ayuda de la función _execute_ se puede escribir una consulta a una de las tablas que esté en la base de datos. 
+
+                cursor.execute("SELECT * FROM tableName")
+
+Por otra parte, también se pueden obtener elementos específicos de la tabla
+
+                cursor.execute("SELECT val1, val2, ... FROM tableName")
+
+Ahora, esta consulta se debe guardar en algún lado. Se queda vagando en la memoria hasta que se invoca la función _fetchall_ o _fectone_ para obtener todos los elementos o solo el primero, respectivamente.
+
+                result = cursor.fetchall()
+                result = cursor.fetchone()
+
+### Eliminar elementos
+
+Para eliminar nuevamente se utiliza _execute_ con la expresión de eliminación SQL.
+
+                cursor.execute("DELETE FROM tableName WHERE val = '---'")
+                database.commit()
+
+Donde _val_ es el atributo donde se quieren encontrar coindicencias y _---_ corresponde al valor concreto de los elementos que cumplan con ese valor.
+
+**IMPORTANTE**: Los datos serán reflejados, después de hacer commit a la base de datos.
+
+### Actualizar
+
+Finalmente, para actualizar los datos, se utiliza la expresión de actualización de SQL como parámetro en la función _execute_.
+
+                cursor.execute("UPDATE tableName SET val='NewValue' WHERE val = 'OldValue'")
+                database.commit()
+
+**IMPORTANTE**: después de realizar la operación, se debe invocar la función commit para guardar los cambios en la base de datos.
