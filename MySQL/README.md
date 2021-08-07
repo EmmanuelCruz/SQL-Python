@@ -44,7 +44,7 @@ Notése que una vez ejecutado el programa, se mostrará la nueva base creada en 
 
 <div align="center">
 <img src="Base.PNG"" >
-<p>Perfectly balanced</p>
+<p>Creación de base</p>
 </div>
 
 ### Crear una tabla
@@ -67,6 +67,7 @@ Si se corre el programa, podemos notar que en _phpMyAdmin_ ya se encuentra cread
 
 <div align="center">
 <img src="Tabla.PNg" >
+<p>Creación de tabla</p>
 </div>
 
 ### Insertar un nuevo dato
@@ -89,7 +90,7 @@ donde _%s_ significa que ahí estará uno de los datos de los elementos a insert
 
 <div align="center">
 <img src="Insertar.PNG" >
-<p>Perfectly balanced</p>
+<p>Inserción de elementos a la tabla</p>
 </div>
 
 ### Acceder a los elementos de una tabla
